@@ -217,6 +217,7 @@ func (l *Loader) setFieldData(field *fieldData, value interface{}) error {
 					}
 				}
 			}
+			ok = true
 		}
 		if !ok {
 			return l.setMap(field, fmt.Sprint(value))
