@@ -209,15 +209,15 @@ func (l *Loader) setFieldData(field *fieldData, value interface{}) error {
 		if !ok {
 			v1, ok1 := value.(map[interface{}]interface{})
 			if ok1 {
-				v := map[string]interface{}{}
+				v = map[string]interface{}{}
 				for kk, vv := range v1 {
 					k, ok2 := kk.(string)
 					if ok2 {
 						v[k] = vv
 					}
 				}
+				ok = true
 			}
-			ok = true
 		}
 		if !ok {
 			return l.setMap(field, fmt.Sprint(value))
